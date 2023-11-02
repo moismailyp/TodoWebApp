@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="stylestodohomepage.css"> <!-- Add the custom CSS -->
+</head>
+<body class="body">
+<div class="container">
+
+
+    <h1 class="center">Todo List</h1>
+    <div class="table-wrapper">
+
+        <table class="table" border="1">
+            <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>Description</th>
+\                <th>Completed</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="todos : ${todos}">
+                <td th:text="${todos.username}"></td>
+                <td th:text="${todos.description}"></td>
+                <td th:text="${todos.isCompleted ? 'yes' : 'no'}"></td>
+                <td>
+                    <a th:href="@{/editTodo(id=${todos.id})}" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <a th:href="@{/deleteTodo(id=${todos.id})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="btn-div">
+            <a href="/addTodo" class="btn btn-primary">Add New Todo</a>
+        </div>
+
+</div>
+    </div>
+</body>
+</html>

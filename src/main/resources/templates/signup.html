@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .form-control {
+            border: none;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .btn-success {
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn-success:hover {
+            background-color: #45a049;
+        }
+        .text-danger {
+            color: #ff6347;
+        }
+        .login-link {
+            color: #4caf50;
+            text-decoration: none;
+        }
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                    <form th:action="@{/signup}" method="post">
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        <input id="password" type="password" name="password" class="form-control" placeholder="Password" required>
+                        <input id="confirmPassword" type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                        <p th:if="${error}" class="text-danger text-center">User name or Email Already Exists!!!</p>
+                        <button type="submit" value="Signup" class="btn btn-success w-100">Signup</button>
+                        <p class="text-center mt-3">Already have an account? <a href="/login" class="login-link">Login here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        document.getElementById("signupForm").addEventListener("submit", () => {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+            }
+        });
+    </script>
+</body>
+</html>

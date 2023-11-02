@@ -1,0 +1,59 @@
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #3498db;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+/* Main Content Styles */
+.container {
+    text-align: center;
+    padding: 40px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+/* Placeholder for Username */
+.username-placeholder {
+    font-size: 24px;
+    color: #777;
+}
+
+/* Buttons Styles */
+.btn-primary {
+    background-color: #3498db;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+}
